@@ -8,7 +8,7 @@ class SimpleApplicationTests {
 
 	@Test
 	void contextLoads() {
-		String randomChange = ""
+		String randomChange = "";
 	}
 
 }
