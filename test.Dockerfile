@@ -4,5 +4,9 @@ ARG PORT=8080
 
 EXPOSE ${PORT}
 
+WORKDIR /app
+
+COPY . .
+
 RUN mvn clean
 CMD ["mvn", "test"]
