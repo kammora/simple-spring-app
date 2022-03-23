@@ -16,7 +16,7 @@ jobs:
 
     steps:      
     - name: Show current folder 
-      run: pwd && ls
+      run: ls -lah
     
     - uses: docker/setup-buildx-action@v1.6.0
     - name: Test on docker
