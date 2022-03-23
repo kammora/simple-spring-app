@@ -1,3 +1,2 @@
-#!/bin/sh
-exec ./mvnw clean test
+exec ./mvnw clean test -e
 # $@

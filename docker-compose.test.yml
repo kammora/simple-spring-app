@@ -2,7 +2,7 @@ version: "3.9"
 services:
   tests:
     build:
-      dockerfile: test.Dockerfile
-      context: .
+      dockerfile: ./test.Dockerfile
+      context: ./
     ports:
       - "8080:8080"
