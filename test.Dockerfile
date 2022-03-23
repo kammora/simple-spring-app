@@ -10,4 +10,4 @@ COPY . .
 
 RUN chmod +x ./mvnw
 RUN chmod +x ./entrypoint.sh
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["./mvnw", "clean", "test", "-e"]
