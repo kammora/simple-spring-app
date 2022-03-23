@@ -38,7 +38,7 @@ class SimpleControllerTest {
     void checkIfIndexResponseContainsHelloMessage() {
         ResponseEntity<String> restTemplateForEntity = testRestTemplate.getForEntity("http://localhost:" + port, String.class);
 
-        assertThat(restTemplateForEntity.getBody()).contains("hello!");
+        assertThat(restTemplateForEntity.getBody()).contains("hellodsasadd!");
     }
 
     @Test
