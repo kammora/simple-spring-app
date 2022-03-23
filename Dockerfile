@@ -1,4 +1,4 @@
-FROM maven:3.8.4-openjdk-11-slim as COMPILE
+FROM openjdk:11-slim as BUILD
 
 ARG PORT=8080
 
@@ -7,21 +7,7 @@ EXPOSE ${PORT}
 WORKDIR /app
 COPY . .
 
-RUN  mvn clean
-RUN  mvn compile
-
-FROM maven:3.8.4-openjdk-11-slim as TEST
-
-WORKDIR /app
-
-COPY --from=COMPILE /app /app
-RUN  mvn test
-
-FROM maven:3.8.4-openjdk-11-slim as PACKAGE
-
-WORKDIR /app
-COPY --from=TEST /app /app
-RUN  mvn package
+RUN  ./mvnw clean install -Dmaven.test.skip=true
 
 FROM openjdk:11-slim as RELEASE
 
