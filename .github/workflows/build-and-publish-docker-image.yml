@@ -8,19 +8,19 @@ on:
 
 jobs:
 
-  test:
+#   test:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file test.Dockerfile --tag kakalore/simple-spring-app-test:latest
-    - name: Run test
-      run: docker run kakalore/simple-spring-app-test:latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Build the Docker image
+#       run: docker build . --file test.Dockerfile --tag kakalore/simple-spring-app-test:latest
+#     - name: Run test
+#       run: docker run kakalore/simple-spring-app-test:latest
 
   build:
-    needs: [test]
+#     needs: [test]
     runs-on: ubuntu-latest
 
     steps:
