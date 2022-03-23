@@ -1,2 +1,3 @@
 #!/bin/sh
-exec ./mvnw test $@
+exec ./mvnw test
+# $@
