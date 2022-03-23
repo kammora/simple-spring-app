@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  simple-spring-app:
+  tests:
     build:
       dockerfile: test.Dockerfile
       context: .
