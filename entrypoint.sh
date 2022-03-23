@@ -1,2 +1,2 @@
-#/bin/bash
+#!/bin/bash
 exec ./mvnw clean test -e
