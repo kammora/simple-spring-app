@@ -11,7 +11,7 @@ RUN chmod +x ./mvnw
 
 RUN  ./mvnw clean install -Dmaven.test.skip=true
 
-FROM openjdk:11-slim as RELEASE
+FROM openjdk:11-slim as BUILD
 
 WORKDIR /app
 COPY --from=PACKAGE /app/target/*.jar ./app.jar
