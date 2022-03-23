@@ -2,6 +2,8 @@ package com.example.simple;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,9 +11,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
+
+@RunWith(SpringRunner.class)
 
 @SpringBootTest
 class SimpleControllerTest {
@@ -29,7 +34,7 @@ class SimpleControllerTest {
 
     @Test
     void checkIfIndexResponseContainsHelloMessage() {
-        ResponseEntity<String> restTemplateForEntity = testRestTemplate.getForEntity("http://0.0.0.0:" + port, String.class);
+        ResponseEntity<String> restTemplateForEntity = testRestTemplate.getForEntity("http://localhost:" + port, String.class);
 
         assertThat(restTemplateForEntity.getBody()).contains("hello!");
     }
