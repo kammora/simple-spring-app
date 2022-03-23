@@ -1,4 +1,4 @@
-FROM openjdk:11-slim as BUILD
+FROM openjdk:11-slim as PACKAGE
 
 ARG PORT=8080
 
@@ -11,7 +11,7 @@ RUN chmod +x ./mvnw
 
 RUN  ./mvnw clean install -Dmaven.test.skip=true
 
-FROM openjdk:11-slim as BUILD
+FROM openjdk:11-slim as RELEASE
 
 WORKDIR /app
 COPY --from=PACKAGE /app/target/*.jar ./app.jar
