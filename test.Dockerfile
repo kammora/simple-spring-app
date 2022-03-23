@@ -8,4 +8,6 @@ WORKDIR /app
 
 COPY . .
 
-ENTRYPOINT ["mvn", "clean", "test", "-e"]
+RUN chmod +x ./mvnw
+RUN chmod +x ./entrypoint.sh
+ENTRYPOINT ["./mvnw", "clean", "test", "-e"]
