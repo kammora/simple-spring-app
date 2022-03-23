@@ -29,6 +29,14 @@ jobs:
       run: sudo chmod +x ./mvnw
 
     - name: Publish to GitHub Packages Apache Maven
-      run: ./mvnw clean deploy -Dmaven.test.skip=true
+      run: ./mvnw clean install -Dmaven.test.skip=true
       env:
         GITHUB_TOKEN: ${{ github.token }}
+        
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        # Artifact name
+        #name: # optional, default is artifact
+        # A file, directory or wildcard pattern that describes what to upload
+        path: "target/*.jar"
