@@ -8,5 +8,5 @@ WORKDIR /app
 
 COPY . .
 
-RUN mvn clean
-CMD ["mvn", "test"]
+RUN chmod +x ./mvnw
+CMD ["./mvnw", "test"]

@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  simple-spring-app:
+    build:
+      - dockerfile: test.Dockerfile
+      - context: .
+    ports:
+      - "8080:8080"
