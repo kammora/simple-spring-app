@@ -9,4 +9,5 @@ WORKDIR /app
 COPY . .
 
 RUN chmod +x ./mvnw
-CMD ["./mvnw", "test"]
+RUN chmod +x ./entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]
