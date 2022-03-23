@@ -34,4 +34,4 @@ jobs:
         env:
           TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
         run: |
-          echo env: $TOKEN
+          echo $TOKEN
