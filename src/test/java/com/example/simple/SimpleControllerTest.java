@@ -28,7 +28,6 @@ class SimpleControllerTest {
     TestRestTemplate testRestTemplate = new TestRestTemplate();
 
     @Test
-    @Disabled
     void checkIfIndexResponseContainsHelloMessage() {
         ResponseEntity<String> restTemplateForEntity = testRestTemplate.getForEntity("http://localhost:" + port, String.class);
 
@@ -36,10 +35,9 @@ class SimpleControllerTest {
     }
 
     @Test
-    @Disabled
     void checkIfBothMethodsOfGettingEnvWork(){
-//        assertNotEquals(port, Integer.getInteger(environment.getProperty("server.port")));
-//        assertNotEquals(port, 0);
+        assertNotEquals(port, Integer.getInteger(environment.getProperty("server.port")));
+        assertNotEquals(port, 0);
     }
 
     @Test
