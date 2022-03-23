@@ -5,29 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-
-#   test:
-
-#     runs-on: ubuntu-latest
-
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Build the Docker image
-#       run: docker build . --file test.Dockerfile --tag kakalore/simple-spring-app-test:latest
-#     - name: Run test
-#       run: docker run kakalore/simple-spring-app-test:latest
-
-  build:
-#     needs: [test]
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag kakalore/simple-spring-app:latest
-
   publish:
-    needs: [build]
     runs-on: ubuntu-latest
     environment: my_env
     steps:
