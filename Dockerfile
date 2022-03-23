@@ -9,6 +9,8 @@ RUN ./mvnw compile
 FROM maven:3.8.4-openjdk-11-slim as TEST
 
 WORKDIR /app
+RUN chown $USER /app
+
 COPY --from=COMPILE /app /app
 RUN ./mvnw test
 
