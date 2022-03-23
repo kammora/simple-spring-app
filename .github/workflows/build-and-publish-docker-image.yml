@@ -1,8 +1,9 @@
-name: Docker Image CI
+name: Build and publish app
 
 on:
-  push:
-    branches: [ master ]
+  #push:
+  #  branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   publish:
